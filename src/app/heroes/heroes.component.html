@@ -1,0 +1,39 @@
+<!--
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+	  [class.selected]="hero === selectedHero"
+	  (click)="onSelect(hero)">
+	  <span class="badge">{{hero.id}}</span> {{hero.name}}
+	</li>
+</ul>
+-->
+<input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+<p></p>
+<!--
+<table *ngFor="let hero of heroes | grdFilter: {name: searchText}; let i=index;">
+  <tr>
+    <td style="width: 5%;">{{i +1}}</td>
+    <td style="width: 10%;">{{hero.name}}</td>
+    <td style="width: 5%;">{{hero.id}}</td>
+  </tr>
+</table>
+-->
+
+<!--
+<li *ngFor="let hero of heroes | grdFilter: {name: searchText}; let i=index;  | paginate: { itemsPerPage: 5, currentPage: p }"
+	  [class.selected]="hero === selectedHero"
+	  (click)="onSelect(hero)">
+	-->
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes | paginate: { itemsPerPage: 15, currentPage: p } | grdFilter: {name: searchText}; let i=index;"
+	  [class.selected]="hero === selectedHero"
+	  (click)="onSelect(hero)">
+	  <span class="badge">{{hero.id}}</span> {{hero.name}}
+	</li>
+</ul>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
