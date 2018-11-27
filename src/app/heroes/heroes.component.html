@@ -26,10 +26,11 @@
 	-->
 
 <ul class="heroes">
-  <li *ngFor="let hero of heroes | paginate: { itemsPerPage: 15, currentPage: p } | grdFilter: {name: searchText}; let i=index;"
+  <li *ngFor="let hero of heroes | grdFilter: {name: searchText} | paginate: { itemsPerPage: 10, currentPage: p }"
 	  [class.selected]="hero === selectedHero"
 	  (click)="onSelect(hero)">
-	  <span class="badge">{{hero.id}}</span> {{hero.name}}
+	  <span class="badge">{{hero.id}}</span> <span class="{{hero.discount<-40?'pricedisg':'pricedis'}}">{{hero.discount}}%</span> <span class="pricede">{{hero.de}}</span> <span class="{{hero.por<20.00?'priceporg':'pricepor'}}">{{hero.por}}</span> {{hero.name}}
+
 	</li>
 </ul>
 

@@ -16,7 +16,10 @@ export class HeroesComponent implements OnInit {
   heroes = HEROES;
   hero: Hero = {
     id: 1,
-    name: 'Windstorm'
+    name: 'Windstorm',
+    de: 0,
+    por: 0,
+    discount: -10
   };
   
 	selectedHero: Hero;
@@ -31,17 +34,35 @@ export class HeroesComponent implements OnInit {
         data => {
           let res = data[0];
           console.log(res);
-          console.log('leg: '+data.length);   
-         for(var i=0;i<data.length;i++)
+          console.log('leg: '+(<any>data).length);   
+         for(var i=0;i<(<any>data).length;i++)
          {
             let res = data[i];   
             console.log('Data =  '+JSON.stringify(res));
             //let nid = 21+i;
             let nid=i;
             let title = data[i]['title'];
-            let maxsize = 45;
+            let maxsize = 40;
             title = title.substring(0,title.length>maxsize?maxsize:title.length);
-            this.heroes.push({id:nid,name:title});
+            let disc = data[i]['discount'].replace('%','');
+            
+            let de = data[i]['de'];
+            let por = data[i]['por'];
+
+            de = de.replace(',','.');
+            por = por.replace(',','.');
+
+
+            if(disc.length>5)
+               {
+                disc = -999;
+                de = 999;
+                por = 999;
+
+               }
+
+
+            this.heroes.push({id:nid,name:title,de:de,por:por,discount:disc});
          }
 
           /*this.Drugs = res['Drugs']; 

@@ -7,7 +7,7 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 30em;
+  width: 50em;
 }
 .heroes li {
   cursor: pointer;
@@ -40,9 +40,80 @@
   background-color: #607D8B;
   line-height: 1em;
   position: relative;
-  left: -1px;
+  left: -4px;
   top: -4px;
   height: 1.8em;
   margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+.heroes .pricedis {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  width: 40px;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1em;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+.heroes .pricedisg{
+  display: inline-block;
+  font-size: small;
+  color: white;
+  width: 40px;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: red;
+  line-height: 1em;
+  position: relative;
+  left: -1em;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+.heroes .pricede {
+  display: inline-block;
+  font-size: small;
+   text-decoration: line-through;
+  color: white;
+  width: 40px;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1em;
+  top:-4px;
+  height: 1.8em;
+  border-radius: 4px 0 0 4px;
+}
+.heroes .pricepor {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: 0em;
+  top: -4px;
+  height: 1.8em;
+  border-radius: 4px 0 0 4px;
+}
+.heroes .priceporg {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: green;
+  line-height: 1em;
+  position: relative;
+  left: 0em;
+  top: -4px;
+  height: 1.8em;
   border-radius: 4px 0 0 4px;
 }
