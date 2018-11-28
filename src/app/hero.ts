@@ -4,4 +4,7 @@ export class Hero {
   de: number;
   por: number;
   discount: number;
+  dehist: string;
+  porhist: string;
+  dischist: string;
 }

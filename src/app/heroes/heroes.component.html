@@ -38,3 +38,16 @@
 
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+
+<div>
+  <div style="width: 300px;height: 300px;">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+  </div>
+</div>
